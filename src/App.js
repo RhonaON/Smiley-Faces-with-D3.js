@@ -1,49 +1,34 @@
+// Import packages
+import { range } from "d3";
 //Import components
-import { BackgroundCircle } from "./BackgroundCircle";
-import { Eyes } from "./Eyes";
-import { Mouth } from "./Mouth";
+import { Face } from "./Face";
 
-// Variables for eyes
-const width = 700;
-const height = 700;
-const centreX = width / 2;
-const centreY = height / 2;
-const strokeWidth = 20;
-const eyeOffsetX = 120;
-const eyeOffsetY = 150;
-const eyeRadius = 80;
-const mouthWidth = 30;
-const mouthRadius = 220;
-const eyeFill = "white";
-const eyeStroke = "black";
-const eyeStrokeWidth = 2;
-const pupilRadius = eyeRadius / 4;
-const pupilFill = "black";
+// Variables for smiley face parts
+const width = 200;
+const height = 200;
+const eyeRadius = 25;
 
-function App() {
-  // Constructor function for mouth using d3-shape lib 'arc'
+const faceArray = range(50);
 
-  // <g> tag below refers to an svg group element - this means you can move everything inside a group element together
-  return (
-    <div className="App">
-      <svg width={width} height={height}>
-        <g transform={`translate(${centreX},${centreY})`}>
-          <BackgroundCircle radius={centreY - strokeWidth} />
-          <Eyes
-            eyeOffsetX={eyeOffsetX}
-            eyeOffsetY={eyeOffsetY}
-            eyeRadius={eyeRadius}
-            eyeStroke={eyeStroke}
-            eyeStrokeWidth={eyeStrokeWidth}
-            pupilFill={pupilFill}
-            pupilRadius={pupilRadius}
-            eyeFill={eyeFill}
-          />
-          <Mouth mouthRadius={mouthRadius} mouthWidth={mouthWidth} />
-        </g>
-      </svg>
-    </div>
-  );
-}
+const App = () =>
+  faceArray.map(() => (
+    <Face
+      width={width}
+      height={height}
+      centreX={width / 2}
+      centreY={height / 2}
+      strokeWidth={20 + Math.random() * 6}
+      eyeOffsetX={30 + Math.random() * 10}
+      eyeOffsetY={25 + Math.random() * 12}
+      eyeRadius={eyeRadius + Math.random() * 25}
+      mouthWidth={8 + Math.random() * 4}
+      mouthRadius={60 + Math.random() * -10}
+      eyeFill={"white"}
+      eyeStroke={"black"}
+      eyeStrokeWidth={2}
+      pupilRadius={eyeRadius / 4 + Math.random() * 10}
+      pupilFill={"black"}
+    />
+  ));
 
 export default App;

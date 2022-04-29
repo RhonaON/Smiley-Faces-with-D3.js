@@ -3,7 +3,7 @@ import { arc } from "d3-shape";
 
 export const Mouth = ({ mouthRadius, mouthWidth }) => {
   const mouthArc = arc()
-    // METHOD CHAINING
+    // Method chaining
     .innerRadius(mouthRadius)
     .outerRadius(mouthRadius + mouthWidth)
     .startAngle(Math.PI / 2)
