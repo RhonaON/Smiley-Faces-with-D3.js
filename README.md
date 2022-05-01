@@ -4,7 +4,7 @@ Following the 'Data Visualization with D3, JavaScript, React - Full Course [2021
 
 (https://www.youtube.com/watch?v=2LhoCfjm8R4)
 
-Using Create React App template and NPM packages instead of the UMD formate used in the course.
+Using Create React App template and NPM packages instead of the UMD format used in the course.
 
 # Getting Started with Create React App
 
